@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieDetailVC" customModule="WMooive" customModuleProvider="target">
+            <connections>
+                <outlet property="favoriteButton" destination="NHS-3p-qQT" id="SK8-JX-h0f"/>
+                <outlet property="movieDescriptionLabel" destination="tjB-tv-6Wv" id="gvx-e5-ij4"/>
+                <outlet property="movieTitleLabel" destination="IBB-LX-zoE" id="dzY-U5-Cxa"/>
+                <outlet property="posterImageView" destination="1kO-5w-YEK" id="rYn-nA-gRg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1kO-5w-YEK" userLabel="PosterImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="XKL-PL-Vrl"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBB-LX-zoE" userLabel="MovieTitle">
+                    <rect key="frame" x="15" y="269.66666666666669" width="363" height="20.333333333333314"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjB-tv-6Wv" userLabel="MovieDescription">
+                    <rect key="frame" x="15" y="310" width="363" height="20.333333333333314"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHS-3p-qQT" userLabel="FavoriteButton">
+                    <rect key="frame" x="338" y="227.66666666666666" width="40" height="36.999999999999972"/>
+                    <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="NHS-3p-qQT" secondAttribute="height" multiplier="14:13" id="0Ll-VX-kta"/>
+                        <constraint firstAttribute="width" constant="40" id="sgh-Vq-WDQ"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="systemYellowColor"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal">
+                        <imageReference key="image" image="star" catalog="system" symbolScale="large"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="didTapToggleFavoriteButton:" destination="-1" eventType="touchUpInside" id="0Al-Yg-h15"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="tjB-tv-6Wv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="6EA-Aj-ySM"/>
+                <constraint firstItem="1kO-5w-YEK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DdF-iU-7Hd"/>
+                <constraint firstItem="tjB-tv-6Wv" firstAttribute="top" secondItem="1kO-5w-YEK" secondAttribute="bottom" constant="10" id="LTq-hW-ydC"/>
+                <constraint firstItem="IBB-LX-zoE" firstAttribute="top" secondItem="NHS-3p-qQT" secondAttribute="bottom" constant="5" id="NCH-u4-FiP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1kO-5w-YEK" secondAttribute="trailing" id="OPG-Xb-ayE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tjB-tv-6Wv" secondAttribute="bottom" id="PhF-Pf-9AM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tjB-tv-6Wv" secondAttribute="trailing" constant="15" id="YUi-0R-uvo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IBB-LX-zoE" secondAttribute="trailing" constant="15" id="a0c-cJ-3jy"/>
+                <constraint firstItem="tjB-tv-6Wv" firstAttribute="top" secondItem="IBB-LX-zoE" secondAttribute="bottom" constant="20" id="dft-Wp-TB8"/>
+                <constraint firstItem="1kO-5w-YEK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gEw-Vu-9ch"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NHS-3p-qQT" secondAttribute="trailing" constant="15" id="iv3-gU-mIt"/>
+                <constraint firstItem="IBB-LX-zoE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="qFN-JX-L92"/>
+            </constraints>
+            <point key="canvasLocation" x="125.95419847328243" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

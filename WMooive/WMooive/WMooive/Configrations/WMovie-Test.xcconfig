@@ -1,0 +1,13 @@
+//
+//  WMovie-Test.xcconfig
+//  WMooive
+//
+//  Created by Halit Baskurt on 19.06.2024.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+PRODUCT_BUNDLE_IDENTIFIER = bseyha.WMoive
+API_BASE_URL = api.themoviedb.org
+API_KEY = eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YjRiN2U4NTMzNGU2NGI0MDBhNWM5OGJlNzI0YjI4OSIsInN1YiI6IjY2NTQ5NzhmYTJjMzBhYTZhODliODFiOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.oLjGkyl7pjiEifZbsyqYBs_XJhlAFBGjpR-0tyVFv9A
