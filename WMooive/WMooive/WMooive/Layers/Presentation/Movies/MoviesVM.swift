@@ -58,7 +58,7 @@ final class MoviesVMImpl : MoviesVM {
             movieResponse = try await network.request(for: MovieEndpoint(queryItems: [.page("\(currentPage)")]))
             
             guard let movies = movieResponse?.results else { return }
-            moviesData.append(contentsOf: movies)
+            movies.forEach { if !moviesData.contains($0) { moviesData.append($0) } }
             isFetchingMore = false
             stateClosure?(.updateUI(.reloadData(movies: suitableItems(for: searchText))))
             stateClosure?(.updateUI(.setLoading(isShowing: false)))
