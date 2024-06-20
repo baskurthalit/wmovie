@@ -3,6 +3,7 @@
 * Design Patter: MVVM - C
 * Custom Image Cacher called WMovieImageCacher as a SPM
 * Custom Generic network as a SPM
+* Test and prod enviroment.
   
 ### Implementation Details :construction:
 * Movie Listing: Collection View with Diffable Data source.
