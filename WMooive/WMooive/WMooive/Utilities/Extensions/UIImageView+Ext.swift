@@ -9,17 +9,15 @@ import UIKit
 import WMovieImageCacher
 
 extension UIImageView {
+    static let imageLoader: ImageLoader = .init()
     
     func load(from imageUrl: String, placeholder: String = "photo.circle.fill") {
-        DispatchQueue.main.async { [weak self] in
-            self?.image = .init(systemName: placeholder)
-            let imageLoader = ImageLoader()
-            self?.isShimmering = true
-            Task {
-                self?.image = await imageLoader.loadImage(from: imageUrl)
-                self?.isShimmering = false
-                self?.contentMode = .scaleAspectFill
-            }
+        image = .init(systemName: placeholder)
+        isShimmering = true
+        Task(priority:.userInitiated) {
+            image = try? await Self.imageLoader.loadImage(from: imageUrl)
+            isShimmering = false
+            contentMode = .scaleAspectFill
         }
     }
 }

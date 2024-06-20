@@ -19,18 +19,17 @@ public struct ImageLoader {
         }
     }
     
-    public func loadImage(from urlString: String) async -> UIImage? {
+    public func loadImage(from urlString: String) async throws -> UIImage? {
         guard !urlString.isEmpty else { return nil }
-        if let cachedImage = await imageCacher.loadImage(url: urlString) {
-            return cachedImage
-        }
+        
+        if let cachedImage = await imageCacher.loadImage(url: urlString) { return cachedImage }
         
         guard let url = URL(string: urlString) else { return nil }
         
-        if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
-            imageCacher.saveImage(url: urlString, image: image)
-            return image
-        } else { return nil }
+        let (data, _) = try await URLSession.shared.data(from: url)
+        guard let image: UIImage = .init(data: data) else { return nil }
+        imageCacher.saveImage(url: urlString, image: image)
+        return image
         
     }
 }
