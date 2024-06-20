@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  ImageLoaderInterface.swift
+//
 //
 //  Created by Halit Baskurt on 19.06.2024.
 //
